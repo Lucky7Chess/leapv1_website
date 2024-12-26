@@ -132,7 +132,7 @@
         <div class="column is-full-width">
           <div class="row">
             <div class="alert alert-primary text-center" role="alert">
-              We have now have full parts kits available in limited numbers. See the purchase tab for details.
+              We have now have full parts kits and assembled hands available in limited numbers. See the purchase tab for details.
             </div>
           </div>
 
@@ -157,14 +157,27 @@
               <div class="content has-text-centered">
                 <iframe width="720" height="405" src="https://www.youtube.com/embed/videoseries?si=3dcAM1dCeCKUxmFQ&amp;list=PL_ZmwsL01w1vjifDJ7uMTxGEOWdsol88c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
-              <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">              
-                <bold>Notes:</bold>
-              </h3>
-                1) This is the Home pose (180 deg.) of the dynamixel, see dots on the horn. They are usually shipped this way. Make sure the parts are attached so that the motors going to the home pose
-                makes the hand go to the home position as in the CAD above.  <br>
-                <img style="width:300px; display: block; margin-left: auto; margin-right: auto;" src="./static/part_img/home_pose.JPG" />
-                <br>
-                2) Pay attention to the types of screws.  "TAP" screws are phillips head, have a serrated edge, and come with the Dynamixel brackets.  The other ones are regular hex head.  M2/M3 stands for the diameter of the screw and the second number is the length.
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-two-thirds">
+                  <h3 class="title is-3">Important, Please Read:</h3>
+                  <div class="content has-text-justified">
+                    <p style="font-size: 16px">
+                      The dots and dashes I've outlined on the motor horn indicate the Home position for the Dynamixels. When the LEAP Hand receives the 180-degree home command at power-up, the Dynamixels will automatically move to this position. Most Dynamixels are shipped already oriented in this home position.
+                      For proper assembly, ensure the motor horns are in this home position when attaching to the joints.  When the hand moves to its home pose, it should perfectly replicate the CAD model's position.<br>
+                      <img style="width:300px; display: block; margin-left: auto; margin-right: auto;" src="./static/part_img/home_pose.JPG" />
+                      <br>
+                      <b>There are three distinct types of screws used in assembly:</b>
+                      <br><br>
+                      <b>TAP Screws (Left):</b> These Phillips head screws have serrated edges and come included with the Dynamixel brackets <br>
+                      <b>Standard Dynamixel M2x4mm (Middle):</b> These are regular, non-TAP screws supplied by Dynamixel <br>
+                      <b>Hex Head Screws (Right):</b> These are standard hex-head screws
+                      <br>
+                      Screw sizing: The first number (M2 or M3) indicates the screw diameter in millimeters, while the second number specifies the length (e.g., 8mm, 10mm).
+                      <br>
+                      <img style="width:400px; display: block; margin-left: auto; margin-right: auto;" src="./static/part_img/screws.JPG" />
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
       </div>
