@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    video.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    image.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning">
+  <meta name="keywords" content="Robot Hand, Dexterous Manipuation, Machine Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:site_name" content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:description"
+    content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:url" content="http://leaphand.com" />
+  <meta property="og:image" content="http://leaphand.com/static/videos/teaser.png" />
+  <meta property="og:video" content="http://leaphand.com/static/videos/compressed.mp4" />
+
+  <meta property="article:publisher" content="http://leaphand.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leap Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta name="twitter:url" content="http://leaphand.com/" />
+  <meta name="twitter:image" content="http://leaphand.com/static/figures/teaser.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player" content="" />
+  <meta name="twitter:player:width" content="640" />
+  <meta name="twitter:player:height" content="360" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <title>LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning</title>
+
+  <link href="./static/css/fonts.googleapis.com_css_family=Google+Sans_Noto+Sans_Castoro.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/cdn.jsdelivr.net_npm_bootstrap@5.1.3_dist_css_bootstrap.min.css">
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <script src="./static/js/isInViewport.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/cdn.jsdelivr.net_npm_bootstrap@5.1.3_dist_js_bootstrap.bundle.min.js"></script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGQXF34FXK"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-CGQXF34FXK');
+  </script>
+</head>
+
+<body>
+  <style>
+    .nav-item {
+      font-size: 25px;
+
+    }
+
+    .navbar-nav .nav-link {
+      margin-right: 7px;
+      margin-left: 7px;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCD5FA;">
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Collapsible wrapper -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCenteredExample"
+        aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse justify-content-center" id="navbarCenteredExample">
+
+        <!-- Left links -->
+        <ul class="navbar-nav mb-5 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./">Main Paper</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./parts">Parts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cad_request">CAD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./assembly">Assembly</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./purchase">Purchase</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Software
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_API" target="_blank">API</a>
+              </li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/Bidex_Manus_Teleop"
+                  target="_blank">Glove</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/Bidex_VisionPro_Teleop"
+                  target="_blank">Vision Pro</a></li>
+              <li><a class="dropdown-item"
+                  href="https://github.com/leap-hand/LEAP_Hand_API/blob/main/useful_tools/mano_to_leap_mapping.py"
+                  target="_blank">MANO</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_Sim"
+                  target="_blank">Isaac Gym</a></li>
+<li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_Isaac_Lab"
+                  target="_blank">Isaac Lab</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">LEAP Hand:</h1>
+            <h2 class="title is-34 publication-title">Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning
+            </h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://kennyshaw.net/">Kenneth
+                  Shaw</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://anag.me">Ananye Agrawal</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.cs.cmu.edu/~dpathak/">Deepak Pathak</a><sup></sup>
+                <br /><sup></sup>Carnegie Mellon University<br />
+                <span>RSS 2023</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <!-- PDF Link. -->
+                    <span class="link-block">
+                      <a href="https://rss2023.github.io/rss2023-website/program/papers/089/"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>RSS 2023</span>
+                      </a>
+                    </span>
+
+                    <!-- arXiv Link. -->
+                    <span class="link-block">
+                      <a target="_blank" href="https://arxiv.org/abs/2309.06440"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>arXiv</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="./static/leap_hand_poster.pdf" class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Poster</span>
+                      </a>
+                    </span>
+                    <!-- Video Link. -->
+                    <span class="link-block">
+                      <a target="_blank" href="https://youtu.be/VKAlJPypQFI"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-youtube"></i>
+                        </span>
+                        <span>Video</span>
+                      </a>
+                    </span>
+                    <!-- twitter Link. -->
+                    <span class="link-block">
+                      <a target="_blank" href="https://twitter.com/pathak2206/status/1705277626577780875"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fab fa-twitter"></i>
+                        </span>
+                        <span>Summary</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://github.com/leap-hand/LEAP_Hand_API"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>API</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://github.com/leap-hand/LEAP_Hand_Sim"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Isaac Gym</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://github.com/leap-hand/LEAP_Hand_Isaac_Lab"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Isaac Lab</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://bidex-teleop.github.io/"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Gloves</span>
+                      </a>
+                    </span>
+                    <span class="link-block">
+                      <a href="https://bidex-teleop.github.io/"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Vision Pro</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="row">
+            <div class="alert alert-success text-center" role="alert">
+<strong>RSS 2025 News:</strong> We are demoing LEAP Hand at RSS on Tuesday 6/24. For our tendon-driven hands, visit <br><a href="https://v2-adv.leaphand.com" target="_blank">v2-adv.leaphand.com</a> for our new fully-released advanced robot hand and a preview of <a href="https://v2.leaphand.com" target="_blank">v2.leaphand.com</a> for a simple low-cost version ($200-$300).
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="content has-text-centered">
+      <iframe width="840" height="472.5" src="https://www.youtube.com/embed/VKAlJPypQFI?si=cCTNNFVNXYQhLoNS"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+    </div>
+  </section>
+
+
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <h2 class="title is-2">Abstract</h2>
+          <div class="content has-text-justified">
+            <p style="font-size: 20px">
+              Dexterous manipulation has been a long-standing challenge in robotics. While machine learning techniques
+              have shown some promise, results have largely been currently limited to simulation. This can be mostly
+              attributed to the lack of suitable hardware. In this paper, we present LEAP Hand, a low-cost dexterous and
+              anthropomorphic hand for machine learning research. In contrast to previous hands, LEAP Hand has a novel
+              kinematic structure that allows maximal dexterity regardless of finger pose. LEAP Hand is low-cost and can
+              be assembled in 4 hours at a cost of 2000 USD from readily available parts. It is capable of consistently
+              exerting large torques over long durations of time. We show that LEAP Hand can be used to perform several
+              manipulation tasks in the real world—from visual teleoperation to learning from passive video data and
+              sim2real. LEAP Hand significantly outperforms its closest competitor Allegro Hand in all our experiments
+              while being 1/8th of the cost. We release the URDF model, 3D CAD files, tuned simulation environment, and
+              a development platform with useful APIs on our website at http://leaphand.com
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-two-thirds">
+          <div class="row">
+            <div class="alert alert-success text-center" role="alert">
+              Thanks to your incredible support this past year, LEAP Hand has become the leading robotic hand platform for machine learning research! We remain committed to actively supporting and developing LEAP Hand.            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+
+          <h3 class="title is-3" style="text-align: center;">
+            <bold><a href="https://bidex-teleop.github.io/">Accurate Teleoperation With Gloves:</a></bold>
+          </h3>
+          <div class="row">
+            <div class="col">
+              <h5 style="text-align: center;">We demo every year at CoRL and RSS!</h5>
+              <div style="text-align: center;">
+                <span class="link-block">
+                  <a target="_blank" href="https://twitter.com/pathak2206/status/1680957424591683585"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                    </span>
+                    <span>Tweet</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/leap-hand/Bidex_Manus_Teleop" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+
+              <video class="center" controls playsinline autoplay loop muted
+                src="./static/videos/video_segments/demo_vr_rss.mp4" width="100%"
+                style="border-radius:10px; width: 55%;"></video>
+              <br>
+              <h6 style="text-align: center;">Our live demo at RSS 2023, thanks Aleksei Petrenko for the video!</h6>
+            </div>
+            <div class="col">
+              <h5 style="text-align: center;">Autonomous Results using Gloves for data collection.</h5>
+              <video class="center" controls playsinline autoplay loop muted
+                src="./static/videos/video_segments/pringles.mp4" width="60%"
+                style="border-radius:10px; width: 100%;"></video>
+              <br>
+              <video class="center" controls playsinline autoplay loop muted
+                src="./static/videos/video_segments/pour_1.mp4" width="60%"
+                style="border-radius:10px; width: 100%;"></video>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <h3 class="title is-3" style="text-align: center;">
+            <bold><a href="https://bidex-teleop.github.io/">Teleoperation With Vision Pro:</a></bold>
+          </h3>
+          <div style="text-align: center;">
+          <span class="link-block">
+            <a href="https://github.com/leap-hand/Bidex_Manus_Teleop" class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col">
+              <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/output_avp_teleop.mp4" width="100%"
+                    style="border-radius:10px; "></video>
+            </div>
+            <div class="col">
+              <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/AVP_pybullet.mp4" width="100%"
+                    style="border-radius:10px; "></video>
+            </div>
+          </div>
+        </div>
+        <br><br>    
+          <h3 class="title is-3" style="text-align: center;">
+                <bold>Sim2Real using Isaac</bold>
+          </h3>
+        <div class="row">
+            <div class="col">
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <span class="link-block">
+                      <a href="https://github.com/leap-hand/LEAP_Hand_Sim"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Isaac Gym</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/in_hand_real_world_new.mp4"
+                    style="border-radius:10px; width: 100%;"></video>
+                </div>
+              </div>
+              <br>
+              <h5 style="text-align: center; padding-bottom: 10px;"> Check out our followup work: <a
+                  href="https://dexfunc.github.io/">Dexterous Functional Grasping</a></h5>
+              <br>
+
+            </td>
+          </tr>
+        </div>
+        <div class = "col">
+                <div class="column has-text-centered">
+                  <div class="publication-links">
+                    <span class="link-block">
+                      <a href="https://github.com/leap-hand/LEAP_Hand_Isaac_Lab"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>Isaac Lab</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/reorient_lab.mp4"
+                    style="border-radius:10px; width: 100%;"></video>
+                </div>
+              </div>
+              <br>
+            </td>
+          </tr>
+        </div>
+        </div>
+
+
+
+        <div class="column has-text-centered">
+                <h3 class="title is-3" style="text-align: center;">
+                <bold>Also check out <a href="https://playground.mujoco.org/#" target="_blank">MuJoCo Playground</a> <br>by Zakka et. al.</bold></h3>
+                  <div class="publication-links">
+                    <span class="link-block">
+                      <a href="https://playground.mujoco.org/"
+                        class="external-link button is-normal is-rounded is-dark"  target="_blank">
+                        <span class="icon">
+                          <svg class="svg-inline--fa fa-github fa-w-16" aria-hidden="true" focusable="false"
+                            data-prefix="fab" data-icon="github" role="img" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 496 512" data-fa-i2svg="">
+                            <path fill="currentColor"
+                              d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                            </path>
+                          </svg><!-- <i class="fab fa-github"></i> Font Awesome fontawesome.com -->
+                        </span>
+                        <span>MuJoCo Playground</span>
+                      </a>
+                    </span>
+                  </div>
+                </div>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/playground.mp4"
+                    style="border-radius:10px; width: 50%;"></video>
+                </div>
+              </div>
+              <br>
+              <br>
+            </td>
+          </tr>
+          <br>
+        
+
+
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">
+            <bold><a href="https://robotic-telekinesis.github.io/">Teleoperation from Uncalibrated Human Video</a>
+            </bold>
+          </h3>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/teleop_1.mp4" width="100%" style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/teleop_2.mp4" width="100%" style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/teleop_3.mp4" width="100%" style="border-radius:10px; "></video>
+                </div>
+              </div>
+              <br>
+              <br>
+            </td>
+          </tr>
+
+          <br>
+          <h3 class="title is-3" style="text-align: center; padding-bottom: 10px;">
+            <bold><a href="https://video-dex.github.io/">Behavior Cloning with Internet Videos</a></bold>
+          </h3>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/autonomous_1.mp4" width="100%"
+                    style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/autonomous_2.mp4" width="100%"
+                    style="border-radius:10px; "></video>
+                </div>
+                <div class="col">
+                  <video class="center" playsinline autoplay loop muted
+                    src="./static/videos/video_segments/autonomous_3.mp4" width="100%"
+                    style="border-radius:10px; "></video>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col" style="text-align: center;">
+                  <img src="./static/figures/behavior_cloning.PNG" alt="Behavior Cloning Results Table" width="80%">
+                </div>
+              </div>
+            </td>
+          </tr>
+        <br>     
+        <br>
+        <br>
+          <h3 class="title is-3" style="text-align: center;">
+            <bold>Kinematics and Dexterity:</bold>
+          </h3>
+          <h5 style="text-align: center; padding-bottom: 10px;"> LEAP hand demonstrates side to side dexterity in both
+            the finger up and finger down configuration. <br> This is thanks to its universal abduction-adduction
+            mechanism.</h4>
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <video class="center" playsinline autoplay loop muted
+                      src="./static/videos/video_segments/allegro_side_side.mp4" width="100%"
+                      style="margin: -4px; border: 8px; border-radius:10px; border-style: solid; border-color: red;"></video>
+                  </div>
+                  <div class="col">
+                    <video class="center" playsinline autoplay loop muted
+                      src="./static/videos/video_segments/leap_c_side_side.mp4" width="100%"
+                      style="margin: -4px; border: 8px; border-radius:10px; border-style: solid; border-color: red;"></video>
+                  </div>
+                  <div class="col">
+                    <video class="center" playsinline autoplay loop muted
+                      src="./static/videos/video_segments/leap_side_side.mp4" width="100%"
+                      style="margin: -4px; border: 8px; border-radius:10px; border-style: solid; border-color: green;"></video>
+                  </div>
+                </div>
+                <br>
+                <br>
+              </td>
+            </tr>
+
+            <h3 class="title is-3" style="text-align: center;">
+              <bold>Cost</bold>
+            </h3>
+            <h5 style="text-align: center; padding-bottom: 10px;"> LEAP Hand costs under $2000 and can be <a
+                href="./assembly">assembled in under three hours using only common hand tools.</a></h5>
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <video class="center" playsinline autoplay loop muted
+                      src="./static/videos/video_segments/assembly_new.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                  </div>
+                  <div class="col">
+                    <div class="sketchfab-embed-wrapper"> <iframe title="LEAP Full Assembly Right" frameborder="0"
+                        allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                        allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                        execution-while-out-of-viewport execution-while-not-rendered web-share width="500" height="360"
+                        src="https://sketchfab.com/models/229cba1aae88468aa7ce890306adba92/embed?camera=0"> </iframe>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+              </td>
+            </tr>
+
+
+            <h3 class="title is-3" style="text-align: center;">
+              <bold>Strength</bold>
+            </h3>
+            <h5 class="title is-5" style="text-align: center;">LEAP Hand is one of the strongest robotic hands available
+              today </h5>
+            <tr>
+            </tr>
+            <tr>
+              <td>
+                <div class="row">
+                  <div class="col">
+                    <video class="center" playsinline autoplay loop muted
+                      src="./static/videos/video_segments/strength.mp4" width="100%"
+                      style="border-radius:10px; "></video>
+                  </div>
+                  <div class="col">
+                    <br><br>
+                    <img src="./static/figures/strength.PNG" alt="Strength Results Table" width="98%">
+                  </div>
+                </div>
+        </div>
+      </div>
+      </td>
+      </tr>
+
+      <br>
+      <h3 class="title is-3" style="text-align: center;">
+        <bold>Robustness</bold>
+      </h3>
+      <h5 class="title is-5" style="text-align: center;">LEAP Hand can accurately complete repeated motions without
+        overheating </h5>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col">
+              <br>
+              <video class="center" playsinline autoplay loop muted
+                src="./static/videos/video_segments/repeatability_test.mp4" width="100%"
+                style="border-radius:10px; "></video>
+            </div>
+            <div class="col" style="text-align: center;">
+              <img src="./static/figures/repeatability-1.png" alt="Repeatability Test Graph" width="70%">
+              <img src="./static/figures/repeatability_caption.png" alt="Repeatability Test Caption" width="70%">
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <br>
+      <h3 class="title is-3" style="text-align: center">
+        <bold>Human-like Versatility</bold>
+      </h3>
+      <h5 class="title is-5" style="text-align: center;">LEAP Hand can grasp a wide variety of objects easily</h5>
+      <tr>
+        <td>
+          <div class="row">
+            <div class="col">
+              <video class="center" playsinline autoplay loop muted src="./static/videos/video_segments/grasp_1.mp4"
+                width="100%" style="border-radius:10px; "></video>
+            </div>
+            <div class="col">
+              <video class="center" playsinline autoplay loop muted src="./static/videos/video_segments/grasp_2.mp4"
+                width="100%" style="border-radius:10px; "></video>
+            </div>
+            <div class="col">
+              <video class="center" playsinline autoplay loop muted src="./static/videos/video_segments/grasp_3.mp4"
+                width="100%" style="border-radius:10px; "></video>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col" style="text-align: center;">
+              <img src="./static/figures/grasp.PNG" alt="Grasping Test Table" width="100%">
+            </div>
+            <div class="col" style="text-align: center;">
+              <img src="./static/figures/teleoperation.PNG" alt="Teleoperation Test Table" width="100%">
+            </div>
+          </div>
+
+        </td>
+      </tr>
+
+
+
+    </div>
+    </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="titile">BibTeX</h2>
+      <pre><code>@article{shaw2023leaphand,
+      title={LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning},
+      author={Shaw, Kenneth and Agarwal, Ananye and Pathak, Deepak},
+      journal={Robotics: Science and Systems (RSS)},
+      year={2023}}
+          </code></pre>
+    </div>
+  </section>
+
+  <section class="section" id="Ack">
+    <div class="container is-max-desktop content">
+      <h2 class="titile">Acknowledgements</h2>
+      We thank Shikhar Bahl, Russell Mendonca, Unnat Jain and Jianren Wang for fruitful discussions about the project.
+      KS is supported by NSF Graduate Research Fellowship under Grant No. DGE2140739. This work is supported by ONR
+      N00014-22-1-2096 and the DARPA Machine Common Sense grant.
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="large-font bottom_buttons" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+        <br />
+        
+        <!-- <p>Page template borrowed from <a href="https://nerfies.github.io"><span class="dnerf">Nerfies</span></a>.</p> -->
+        <div align='center'><a href='https://www.websitecounterfree.com'><img
+              src='https://www.websitecounterfree.com/c.php?d=6&id=39103&s=4' border='0'
+              alt='Free Website Counter'></a><br /><small><a href='https://www.websitecounterfree.com'
+              title="Website Views">Website Views</a></small></div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    var mainLoopId = setInterval(function () {
+      $('video').not('#teaser').each(function () {
+        if ($(this).is(":in-viewport")) {
+          $(this)[0].play();
+        } else {
+          $(this)[0].pause();
+        }
+      })
+    }, 200);
+
+
+  </script>
+</body>
+
+</html>

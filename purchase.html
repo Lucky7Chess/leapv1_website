@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    video.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    image.center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="description" content="Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning">
+  <meta name="keywords" content="Robot Hand, Dexterous Manipuation, Machine Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:site_name" content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:description"
+    content="LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta property="og:url" content="http://leaphand.com" />
+  <meta property="og:image" content="http://leaphand.com/static/videos/teaser.png" />
+  <meta property="og:video" content="http://leaphand.com/static/videos/compressed.mp4" />
+
+  <meta property="article:publisher" content="http://leaphand.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Leap Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning" />
+  <meta name="twitter:url" content="http://leaphand.com/" />
+  <meta name="twitter:image" content="http://leaphand.com/static/figures/teaser.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:player" content="" />
+  <meta name="twitter:player:width" content="640" />
+  <meta name="twitter:player:height" content="360" />
+
+
+  <title>LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning</title>
+
+  <link href="./static/css/fonts.googleapis.com_css_family=Google+Sans_Noto+Sans_Castoro.css" rel="stylesheet">
+
+  <script src="./static/js/ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/cdn.jsdelivr.net_gh_jpswalsh_academicons@1_css_academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/cdn.jsdelivr.net_npm_bootstrap@5.1.3_dist_css_bootstrap.min.css">
+  <script src="./static/js/isInViewport.min.js"></script>
+  <script src="./static/js/cdn.jsdelivr.net_npm_bootstrap@5.1.3_dist_js_bootstrap.bundle.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <style>
+    .nav-item {
+      font-size: 25px;
+
+    }
+
+    .navbar-nav .nav-link {
+      margin-right: 7px;
+      margin-left: 7px;
+    }
+  </style>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCD5FA;"> 
+    <!-- Container wrapper -->
+    <div class="container">
+      <!-- Collapsible wrapper -->
+      <div
+        class="navbar-collapse justify-content-center"
+        id="navbarCenteredExample"
+      >
+        <!-- Left links -->
+        <ul class="navbar-nav mb-5 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="./" >Main Paper</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./parts" >Parts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cad_request">CAD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./assembly" >Assembly</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./purchase" >Purchase</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Software
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_API" target="_blank">API</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/Bidex_Manus_Teleop" target="_blank">Glove</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/Bidex_VisionPro_Teleop" target="_blank">Vision Pro</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_API/blob/main/useful_tools/mano_to_leap_mapping.py" target="_blank">MANO</a></li>
+              <li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_Sim"
+                  target="_blank">Isaac Gym</a></li>
+<li><a class="dropdown-item" href="https://github.com/leap-hand/LEAP_Hand_Isaac_Lab"
+                  target="_blank">Isaac Lab</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+
+
+<section class="section">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-two-thirds">
+              <h3 class="title is-3">1) Purchase Parts and Assemble Yourself</h3>
+              <div class="content has-text-justified">
+                <p style="font-size: 16px">
+                  We keep the website updated on all parts required to build LEAP Hand!  This is the easiest way to get one and build it!
+              </div>
+            </div>
+          </div>
+           <div class="columns is-centered has-text-centered">        
+            <div class="column is-two-thirds">
+              <h3 class="title is-3">2) Buy</h3>
+              <div class="content has-text-justified">
+                <p style="font-size: 16px">
+                  <div class="alert alert-danger text-center" role="alert">
+                      2. Due to the changing Tariff landscape, our partnership with Robotis/Dexbotics has ended.  <br>We are no longer providing the Dynamixel parts kits or assembled hands through that.
+                  <br>
+                </div>
+                If you are interested in assembling hands for us though, please reach out!  Always open to new collaborations!  We can provide all documentation and support to help get you started with our partnership with Dexbotics/Robotis!
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-two-thirds">
+              <h3 class="title is-3">3) Amazon</h3>
+              <div class="row">
+                  There are some LEAP Hands on Amazon from a variety of different sellers.  Please note that you will pay additional Amazon fees compared to directly ordering from these vendors.  Check them out here:                
+              </div>
+              <br>
+              <button type="submit" href="https://a.co/d/ggOW0vR" class="btn btn-primary">Amazon</button>
+            </div>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-two-thirds">
+              <div class="row">
+                <div class="alert alert-danger text-center" role="alert">
+                  Please be aware that these LEAP Hands such as on Taobao and other Chinese e-commerce platforms are not affiliated with us, and we cannot guarantee the quality or authenticity of their products. Any purchases from unauthorized sellers are made at your own risk.           
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="large-font bottom_buttons" disabled>
+        <i class="fab fa-github"></i>
+      </a> -->
+        <br />
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    var mainLoopId = setInterval(function () {
+      $('video').not('#teaser').each(function () {
+        if ($(this).is(":in-viewport")) {
+          $(this)[0].play();
+        } else {
+          $(this)[0].pause();
+        }
+      })
+    }, 200);
+
+
+  </script>
+</body>
+
+</html>
